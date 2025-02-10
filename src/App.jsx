@@ -21,8 +21,10 @@ const tabData = [
 function App() {
 	const [activeTab, setActiveTab] = useState(1)
 	const [isOpen, setIsOpen] = useState(true)
+	const [count, setCount] = useState(0)
 	const handleActiveTab = id => {
 		setActiveTab(id)
+		setCount(c => c + 1)
 	}
 	return (
 		<div>
@@ -42,7 +44,7 @@ function App() {
 						))}
 					</div>
 					<div className="tab__content">
-						{tabData[activeTab - 1].content}
+						{tabData[activeTab - 1].content} - {count}
 					</div>
 				</div>
 			) : (
